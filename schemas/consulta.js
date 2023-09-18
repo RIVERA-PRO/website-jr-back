@@ -7,24 +7,26 @@ const schema = Joi.object({
         .min(3)
         .messages(
             {
-                'string.min': 'The name must be at least 3 characters',
-                'string.empty': 'The name cannot be empty',
-                'any.required': 'A name is required'
+                'string.min': 'El nombre debe tener al menos 3 caracteres',
+                'string.empty': 'El nombre no puede estar vacío',
+                'any.required': 'Se requiere un nombre'
             },
         ),
+
     email: Joi
         .string()
         .required()
         .min(8)
-        .email({ minDomainSegments: 2  })
+        .email({ minDomainSegments: 2 })
         .messages(
             {
-                'string.min': 'The mail must be at least 8 characters',
-                'string.empty': 'The mail cannot be empty',
-                'any.required': 'A mail is required',
-                'string.email': 'A valid mail is necessary'
+                'string.min': 'El correo electrónico debe tener al menos 8 caracteres',
+                'string.empty': 'El correo electrónico no puede estar vacío',
+                'any.required': 'Se requiere un correo electrónico',
+                'string.email': 'Es necesario un correo electrónico válido'
             }
         ),
+
     question: Joi
         .string()
         .required()
@@ -32,9 +34,10 @@ const schema = Joi.object({
         .max(500)
         .messages(
             {
-                'string.min': 'The password must be at least 3 characters',
-                'string.max': 'The password cannot exceed 500 characters'
+                'string.min': 'La consulta debe tener al menos 3 caracteres',
+                'string.max': 'La consulta no puede exceder los 500 caracteres'
             }
-        )
+        ),
+
 })
-    export default schema
+export default schema
